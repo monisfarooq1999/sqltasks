@@ -1,0 +1,20 @@
+SELECT MAX(Salary) max_salary FROM employee;
+SELECT COUNT(e_id) Employees_Over_30K FROM employee WHERE Salary > 30000
+SELECT SUM(Salary + 5000) AS net_salary_5k_added_all FROM employee;
+
+UPDATE `employee` SET `Salary`= Salary + 5000 WHERE e_id >= 1;
+UPDATE `employee` SET `Salary`= Salary + 5000 WHERE e_id >= 1 AND e_id <= 20;
+SELECT SUM(Salary) AS net_salary FROM employee;
+
+
+INNER JOIN
+SELECT e_id Emp_ID, Name, Salary, department.department_name Dept_Name FROM employee INNER JOIN department on employee.Department = department.d_id;
+
+SELECT COUNT(e_id) TotalEmployees, department.department_name FROM employee INNER JOIN department on employee.Department = department.d_id GROUP BY department.department_name;
+
+SELECT COUNT(e_id) TotalEmployees, Gender FROM employee GROUP BY Gender;
+
+
+SELECT SUM(Salary) Net_Salary_Dept, department.department_name FROM employee INNER JOIN department on employee.Department = department.d_id GROUP BY department.department_name;
+
+SELECT SUM(Salary) Net_Salary_Dept, department.department_name FROM employee INNER JOIN department on employee.Department = department.d_id GROUP BY department.department_name ORDER BY Net_Salary_Dept DESC LIMIT 3;

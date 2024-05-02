@@ -1,0 +1,4 @@
+-- SELECT * FROM `employee` WHERE `Gender` = 'f';
+-- SELECT * FROM `employee` WHERE `Gender` = 'm';
+-- SELECT * FROM `employee` WHERE Salary >= 70000;
+-- SELECT * FROM `employee` WHERE `Gender` = 'f' AND Department = 2;
